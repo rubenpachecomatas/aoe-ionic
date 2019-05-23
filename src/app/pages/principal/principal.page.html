@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title id="title"><ion-icon name="home"></ion-icon> Civilizations</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="text-align:center;">
+  <hr>
+  <ion-grid>
+    <ion-row id="headers">
+      <ion-col>
+        Name
+      </ion-col>
+      <ion-col>
+        Expansion
+      </ion-col>
+      <ion-col>
+        Army
+      </ion-col>
+      <ion-col size="3">
+      </ion-col>
+    </ion-row>
+    <br>
+    <ion-row *ngFor="let civilization of civilizations">
+      <ion-col (click)="sendIdToMod(civilization)">
+        {{civilization.name}}
+      </ion-col>
+      <ion-col (click)="sendIdToMod(civilization)">
+        {{civilization.expansion}}
+      </ion-col>
+      <ion-col (click)="sendIdToMod(civilization)">
+        {{civilization.army}}
+      </ion-col>
+      <ion-col><ion-icon (click)="confirm(civilization._id)" type="button" name="trash" style="font-size: 2em; color: #f04141"></ion-icon></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

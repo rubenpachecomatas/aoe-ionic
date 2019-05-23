@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title id="title"><ion-icon name="log-in"></ion-icon> Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <hr>
+  <ion-list>
+    <ion-header>
+      <ion-label id="headers">
+        Login
+      </ion-label>
+    </ion-header>
+    <ion-item>
+      <ion-label>Email <ion-icon name="arrow-dropright"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="email" name="email" type="email" id="email" placeholder="Enter your email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password <ion-icon name="arrow-dropright"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="password" name="password" type="password" id="password" placeholder="Enter your password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button color="success" (click)="authService.login(email, password)">Log In</ion-button>
+  <ion-button color="medium" (click)="authService.signin(email, password)">Sign In</ion-button>
+  <hr><hr>
+  <ion-list>
+      <ion-header>
+        <ion-label id="headers">
+          Forgot password
+        </ion-label>
+      </ion-header>
+      <ion-item>
+        <ion-label>Email <ion-icon name="arrow-dropright"></ion-icon></ion-label>
+        <ion-input [(ngModel)]="emailR" name="emailR" type="email" id="emailR" placeholder="Enter your email"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button color="success" (click)="authService.resPassword(emailR)">Send me an email</ion-button>
+
+  
+</ion-content>

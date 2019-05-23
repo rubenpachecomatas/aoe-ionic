@@ -1,0 +1,6 @@
+<ion-app *ngIf="!authService.checkUser()">
+  <app-login></app-login>
+</ion-app>
+<ion-app *ngIf="authService.checkUser()">
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title id="title"><ion-icon name="person"></ion-icon> User</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <hr>
+  <ion-list>
+    <ion-header>
+      <ion-label id="headers">
+        Change your password
+      </ion-label>
+      <hr>
+    </ion-header>
+    <ion-item>
+      <ion-label>Email <ion-icon name="arrow-dropright"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="email" name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password <ion-icon name="arrow-dropright"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="password" name="password" type="password" class="form-control" id="password" placeholder="Enter your password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password <ion-icon name="arrow-dropright"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="newPassword" name="newPassword" type="password" class="form-control" id="newPassword" placeholder="Enter the new password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button color="secondary" (click)="changePass(email, password, newPassword)" name="changePass" id="changePass">Change</ion-button>
+  <hr>
+  <ion-list>
+    <ion-header>
+      <ion-label id="headers">
+        Change your name
+      </ion-label>
+      <hr>
+    </ion-header>
+    <ion-item>
+      <ion-label>New name <ion-icon name="arrow-dropright"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="name" name="name" type="text" class="form-control" id="email" aria-describedby="nameHelp" placeholder="Enter your new username"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button color="secondary" (click)="changeName(name)" name="changeName" id="changeName">Change</ion-button>
+</ion-content>

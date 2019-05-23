@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title id="title" ><ion-icon name="construct"></ion-icon> Modify Civilization</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="civilization">
+    <ion-item>
+      <ion-input [(ngModel)]="civilization._id" id="_id" name="_id" type="hidden" placeholder="_id" class="form-control input-md" required=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Name <ion-icon name="arrow-dropright"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="civilization.name" id="name" name="name" type="text" placeholder="Enter the name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Expansion <ion-icon name="arrow-dropright"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="civilization.expansion" id="expansion" name="expansion" type="text" placeholder="Enter the expansion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Army <ion-icon name="arrow-dropright"></ion-icon></ion-label>
+      <ion-input [(ngModel)]="civilization.army" id="army" name="army" type="text" placeholder="Enter the army"></ion-input>
+    </ion-item>
+  </ion-list>
+  <hr>
+  <ion-button color="medium" [routerLink]="['/nav/principal']" >Go back</ion-button>
+  <ion-button color="secondary" (click)="ModCivs(civilization, civilization._id)" >Modify</ion-button>
+</ion-content>
